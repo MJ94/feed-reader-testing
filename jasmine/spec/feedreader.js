@@ -50,7 +50,9 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+/* This is the second test suite.
+ * This suite is all about the menu and its visibility.
+ */
     describe('The menu', function () {
         /* Test to ensure the menu element is
          * hidden by default.
