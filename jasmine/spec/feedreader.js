@@ -35,10 +35,17 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
+        /* Test that loops through each feed
+         * in the allFeeds object and ensures it has a name defined,
          * and that the name is not empty.
          */
+        it('name defined', function () {
+            for (let feed of allFeeds) {
+                expect(feed.name).toBeDefined();
+                expect(typeof feed.name).toBe('string');
+                expect(feed.name).not.toBe(0);
+            }
+        });
     });
 
 
