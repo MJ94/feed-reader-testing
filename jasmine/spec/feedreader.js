@@ -1,7 +1,9 @@
 /* feedreader.js
  *
+ * Author: Michael Jackson
+ *
  * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
+ * all of the tests that will be run against the application.
  */
 
 /* We're placing all of our tests within the $() function,
@@ -9,28 +11,28 @@
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
-    /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
+    /* This is the first test suite. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
+         * empty.
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
+        /* This second test loops through each feed
+        * in the allFeeds object and ensures it has a URL defined,
+        * and that the URL is not empty. */
+        it('url defined', function () {
+            for (let feed of allFeeds) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url).not.toBe(0);
+            }
+        });
 
 
         /* TODO: Write a test that loops through each feed
