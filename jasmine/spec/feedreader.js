@@ -30,6 +30,7 @@ $(function() {
         it('url defined', function () {
             for (let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
+                expect(typeof feed.url).toBe('string');
                 expect(feed.url).not.toBe(0);
             }
         });
