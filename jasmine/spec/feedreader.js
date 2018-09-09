@@ -95,7 +95,9 @@ $(function() {
         });
     })
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* This is the fourth test suite.
+     * This suite is all about making sure the feed loads and changes content properly.
+     */
     describe('New Feed Selection', function () {
         const feed = document.querySelector('.feed');
         const firstFeed = [];
