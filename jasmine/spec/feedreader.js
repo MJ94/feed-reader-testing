@@ -62,7 +62,7 @@ $(function() {
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
 
-        /* Test to ensures the menu changes
+        /* Test to ensure the menu changes
          * visibility when the menu icon is clicked.
          */
         it('should toggle visibility when clicked', function () {
@@ -81,14 +81,14 @@ $(function() {
  * This suite is all about the feed and its entries.
  */
     describe('Initial Entries', function () {
-        /* Test to ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         */
         beforeEach(function (done) {
             loadFeed(0, done);
         });
 
+        /* Test to ensure when the loadFeed
+         * function is called and completes its work, there is at least
+         * a single .entry element within the .feed container.
+         */
         it('completes work', function () {
             const feed = document.querySelector('.feed');
             expect(feed.children.length).toBeGreaterThan(0);
