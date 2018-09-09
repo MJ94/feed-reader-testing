@@ -93,7 +93,7 @@ $(function() {
             const feed = document.querySelector('.feed');
             expect(feed.children.length).toBeGreaterThan(0);
         });
-    })
+    });
 
     /* This is the fourth test suite.
      * This suite is all about making sure the feed loads and changes content properly.
