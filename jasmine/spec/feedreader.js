@@ -98,25 +98,25 @@ $(function() {
     /* This is the fourth test suite.
      * This suite is all about making sure the feed loads and changes content properly.
      */
-    describe('New Feed Selection', function () {
-        const feed = document.querySelector('.feed');
-        const firstFeed = [];
+    describe("New Feed Selection", function() {
+        let firstFeed;
 
-        beforeEach(function (done) {
-            loadFeed(0);
-            Array.from(feed.children).forEach(function (entry) {
-                firstFeed.push(entry.innerText);
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                firstFeed = document.querySelector('.feed').innerHTML;
+                loadFeed(1, function() {
+                    done();
+                });
             });
-            loadFeed(1, done);
         });
 
         /* Test to ensure when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-        it('content changes', function () {
-            Array.from(feed.children).forEach(function (post, index) {
-                expect(post.innerText === firstFeed[index]).toBe(false);
-            })
+        it("content changes", function(done) {
+            let newFeed = document.querySelector('.feed').innerHTML;
+            expect(firstFeed).not.toBe(newFeed);
+            done();
         });
     });
 
