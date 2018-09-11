@@ -27,7 +27,7 @@ $(function() {
         /* This second test loops through each feed
         * in the allFeeds object and ensures it has a URL defined,
         * and that the URL is not empty. */
-        it('url defined', function () {
+        it('url defined', function() {
             for (let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(typeof feed.url).toBe('string');
@@ -40,7 +40,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined,
          * and that the name is not empty.
          */
-        it('name defined', function () {
+        it('name defined', function() {
             for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(typeof feed.name).toBe('string');
@@ -53,11 +53,11 @@ $(function() {
 /* This is the second test suite.
  * This suite is all about the menu and its visibility.
  */
-    describe('The menu', function () {
+    describe('The menu', function() {
         /* Test to ensure the menu element is
          * hidden by default.
          */
-        it('should be hidden by default', function () {
+        it('should be hidden by default', function() {
             const body = document.querySelector('body');
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
@@ -65,22 +65,22 @@ $(function() {
         /* Test to ensure the menu changes
          * visibility when the menu icon is clicked.
          */
-        it('should toggle visibility when clicked', function () {
+        it('should toggle visibility when clicked', function() {
             const body = document.querySelector('body');
-            const menuIcon = document.querySelector(".menu-icon-link");
+            const menuIcon = document.querySelector('.menu-icon-link');
 
             menuIcon.click();
-            expect(body.classList.contains("menu-hidden")).toBe(false); // menu is open
+            expect(body.classList.contains('menu-hidden')).toBe(false); // menu is open
 
             menuIcon.click();
-            expect(body.classList.contains("menu-hidden")).toBe(true); // menu is closed
+            expect(body.classList.contains('menu-hidden')).toBe(true); // menu is closed
         });
     });
 
 /* This is the third test suite.
  * This suite is all about the feed and its entries.
  */
-    describe('Initial Entries', function () {
+    describe('Initial Entries', function() {
         beforeEach(function (done) {
             loadFeed(0, done);
         });
@@ -89,7 +89,7 @@ $(function() {
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
-        it('completes work', function () {
+        it('completes work', function() {
             const feed = document.querySelector('.feed');
             expect(feed.children.length).toBeGreaterThan(0);
         });
@@ -98,7 +98,7 @@ $(function() {
     /* This is the fourth test suite.
      * This suite is all about making sure the feed loads and changes content properly.
      */
-    describe("New Feed Selection", function() {
+    describe('New Feed Selection', function() {
         let firstFeed;
 
         beforeEach(function(done) {
@@ -113,7 +113,7 @@ $(function() {
         /* Test to ensure when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-        it("content changes", function(done) {
+        it('content changes', function(done) {
             let newFeed = document.querySelector('.feed').innerHTML;
             expect(firstFeed).not.toBe(newFeed);
             done();
