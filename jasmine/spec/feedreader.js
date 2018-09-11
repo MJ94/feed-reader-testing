@@ -57,8 +57,9 @@ $(function() {
         /* Test to ensure the menu element is
          * hidden by default.
          */
+        const body = document.querySelector('body');
+        
         it('should be hidden by default', function() {
-            const body = document.querySelector('body');
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
 
@@ -66,7 +67,6 @@ $(function() {
          * visibility when the menu icon is clicked.
          */
         it('should toggle visibility when clicked', function() {
-            const body = document.querySelector('body');
             const menuIcon = document.querySelector('.menu-icon-link');
 
             menuIcon.click();
