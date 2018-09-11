@@ -31,7 +31,7 @@ $(function() {
             for (let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(typeof feed.url).toBe('string');
-                expect(feed.url).not.toBe(0);
+                expect(feed.url.length).not.toBe(0);
             }
         });
 
@@ -58,7 +58,7 @@ $(function() {
          * hidden by default.
          */
         const body = document.querySelector('body');
-        
+
         it('should be hidden by default', function() {
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
