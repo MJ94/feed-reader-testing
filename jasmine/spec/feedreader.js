@@ -90,8 +90,8 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         it('completes work', function() {
-            const feed = document.querySelector('.feed');
-            expect(feed.children.length).toBeGreaterThan(0);
+            const feed = document.querySelectorAll('.feed .entry');
+            expect(feed.length).toBeGreaterThan(0);
         });
     });
 
