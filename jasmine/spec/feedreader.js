@@ -31,7 +31,7 @@ $(function() {
             for (let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(typeof feed.url).toBe('string');
-                expect(feed.url.length).not.toBe(0);
+                expect(feed.url.length).toBeGreaterThan(0);
             }
         });
 
@@ -44,7 +44,7 @@ $(function() {
             for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(typeof feed.name).toBe('string');
-                expect(feed.name.length).not.toBe(0);
+                expect(feed.name.length).toBeGreaterThan(0);
             }
         });
     });
