@@ -113,10 +113,9 @@ $(function() {
         /* Test to ensure when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-        it('content changes', function(done) {
+        it('content changes', function() {
             let newFeed = document.querySelector('.feed').innerHTML;
             expect(firstFeed).not.toBe(newFeed);
-            done();
         });
     });
 
